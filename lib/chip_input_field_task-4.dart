@@ -1,117 +1,107 @@
 import 'package:flutter/material.dart';
+class ChipInputField extends StatefulWidget{
+  @override
+  ChipInputFiledState createState() => new ChipInputFiledState();
+}
 
-class ChipInputField extends StatelessWidget {
-//  TextEditingController _textFieldController = TextEditingController();
-var a="dfashg";
-Color colorr=Colors.white10;
-Color colore =Colors.white10;
-Color colo = Colors.white10;
-var count=0;
+class ChipInputFiledState extends State<ChipInputField>{
+  var count=-1;
+  Color color1=Colors.blue;
+  Color color2 =Colors.black;
+  Color color3 = Colors.black;
+  Color color4 = Colors.black;
+
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text('new design'),
+//      appBar: AppBar(
+//        title: Text('new design'),
+//      )
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40.0),
+        child: AppBar(title: Text('Translation Editor App'),),
       ),
       body: Container(
-        child: new Wrap(
-//          spacing: 1.0, // gap between adjacent chips
-//          runSpacing: 4.0,
+        child: new Column(
+          crossAxisAlignment:   CrossAxisAlignment.start,
           children: <Widget>[
-            Chip(
-                backgroundColor:  colore,
-                label: new Container(
-                  child: new Text("Common"),
-                )),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-                  child: new Text("examples"),
-                )),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-                  child: new Text("include"),
-                )),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-                  child: new Text("holidays"),
-                )),
-            Divider(color: Colors.red[900],),
-            Chip(
-              backgroundColor:  colorr,
-            label: new Container(
-              constraints: new BoxConstraints(
-                maxWidth: 100.0-38.0
+            Text.rich(
+              TextSpan(
+                children: <TextSpan>[
+                  TextSpan(text: ' Common',style: TextStyle(fontSize: 20.0,color: color1)),
+                  TextSpan(text: ' examples',style: TextStyle(fontSize: 20.0,color: color2)),
+                  TextSpan(text: ' include',style: TextStyle(fontSize: 20.0,color:color3)),
+                  TextSpan(text:" holidays",style: TextStyle(fontSize: 20.0,color:color4))
+                ],
               ),
-              child: new TextField(controller: TextEditingController(text:"సాధారణ"),
-                decoration: InputDecoration(border: InputBorder.none,
-                ),
-//                style: TextStyle(color: colorr),
-              ),
-            )
             ),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-            constraints: new BoxConstraints(
-            maxWidth: 120.0-38.0
-            ),
-              child: new TextField(controller: TextEditingController(text:"ఉదాహరణల"),
-                decoration: InputDecoration(border: InputBorder.none,
-                ),
-//              style: TextStyle(color: colore),
-              ),
-            )),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-                  constraints: new BoxConstraints(
-                      maxWidth: 70.0-38.0
-                  ),
-                  child: new TextField(controller: TextEditingController(text:"లో"),
-    decoration: InputDecoration(border: InputBorder.none,
-    ),),
-                )),
-            Chip(
-                backgroundColor:  Colors.white10,
-                label: new Container(
-                  constraints: new BoxConstraints(
-                      maxWidth: 100.0-38.0
-                  ),
-                  child: new TextField(controller: TextEditingController(text:"సెలవులు"),
-                    decoration: InputDecoration(border: InputBorder.none,
-                    ),),
-                )),
-            Divider(color: Colors.red[900],),
-//            new Card(
+            Divider(),
+            Text.rich(
+              TextSpan(
+                children: <TextSpan>[
 
-              ListTile(
-                leading: Row(
-                  children: <Widget>[
-                    IconButton(icon: new Icon(Icons.arrow_upward),iconSize: 35.0,
-                      padding: const EdgeInsets.only(
-                        left: 150,
-                        top: 20,
-                        right: 40,
-                        bottom: 20,
-                      ),
-                    ),
-            ],),),
+                  TextSpan(text:"సాధారణ",style: TextStyle(fontSize: 20.0,color: color1,)),
+                  TextSpan(text: ' ఉదాహరణల',style: TextStyle(fontSize: 20.0,color: color2)),
+                  TextSpan(text: ' లో',style: TextStyle(fontSize: 20.0,color:color3)),
+                  TextSpan(text: ' సెలవులు',style: TextStyle(fontSize: 20.0,color:color4)),
+                ],
+              ),
+            ),
+            Divider(),
             ListTile(),
+            ListTile(),
+            ListTile(),
+            ListTile(),
+            ListTile(
+              leading: Row(
+                children: <Widget>[
+                  IconButton(icon: new Icon(Icons.arrow_drop_up),iconSize: 55.0,
+                    padding: const EdgeInsets.only(
+                      left: 150,
+                      top: 20,
+                      right: 40,
+                      bottom: 20,
+                    ),
+                  ),
+                ],),),
             ListTile(
                 leading: Row(
                   children: <Widget>[
-                    IconButton(icon: new Icon(Icons.arrow_back),iconSize: 35.0,
+                    IconButton(icon: new Icon(Icons.arrow_left),iconSize: 55.0,
                       padding: const EdgeInsets.only(
                         left: 20,
                         top: 20,
                         right: 40,
                         bottom: 20,
                       ),
-                    ),
-                    IconButton(icon: new Icon(Icons.mode_edit),iconSize: 35.0,
+                        onPressed:(){
+                          setState((){
+                            count=count-1;
+                            if(count==0){
+                              color2=Colors.black;
+                              color1 =Colors.blue;
+
+                            }
+                            else if(count==1){
+//                                colorr = Colors.black;
+//                              count=count-1;
+                              color3 = Colors.black;
+                              color2 =Colors.blue;
+
+
+                            }
+                            else if(count==2)
+                            {
+//                              count=count-1;
+                              color4 = Colors.black;
+                              color3 = Colors.blue;
+                            }
+
+                          });
+                        }
+                                           ),
+                    IconButton(icon: new Icon(Icons.mode_edit),iconSize: 25.0,
                       padding: const EdgeInsets.only(
                         left: 50,
                         top: 40,
@@ -119,22 +109,43 @@ var count=0;
                         bottom: 40,
                       ),
                     ),
-                    IconButton(icon: new Icon(Icons.arrow_forward),iconSize: 35.0,
-                      padding: const EdgeInsets.only(
-                        left: 50,
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                      ),
+                    IconButton(icon: new Icon(Icons.arrow_right),iconSize: 55.0,
+                        padding: const EdgeInsets.only(
+                          left: 20,
+                          top: 20,
+                          right: 20,
+                          bottom: 20,
+                        ),
+                        onPressed:(){
+                          setState((){
+                            count = count+1;
+                              if(count==0){
+                                color1=Colors.black;
+                                color2 =Colors.blue;
+//                                count=count+1;
+                              }
+                              else if(count==1){
+//                                colorr = Colors.black;
+                                color2 =Colors.black;
+                                color3 = Colors.blue;
+//                                count=count+1;
+                              }
+                              else if(count==2)
+                                {
+                                  color3 = Colors.black;
+                                  color4 = Colors.blue;
+//                                  count=count+1;
+                                }
+                          });
+                        }
                     ),
-                  ],)
 
+                  ],)
             ),
-            ListTile(),
             ListTile(
                 leading: Row(
                   children: <Widget>[
-                    IconButton(icon: new Icon(Icons.arrow_downward),iconSize: 35.0,
+                    IconButton(icon: new Icon(Icons.arrow_drop_down),iconSize: 55.0,
                       padding: const EdgeInsets.only(
                         left: 150,
                         top: 20,
@@ -145,11 +156,15 @@ var count=0;
                   ],)
 
             ),
-                      ],
+
+          ],
         ),
+
       ),
     );
   }
 
 }
+
+
 

@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:new_wiki/chip_input_field_task-4.dart';
 //import 'week3/chip_input_field_task-4.dart';
 
-void main() => runApp(MyApp());
-
+import 'package:flutter/services.dart';
+void main(){
+  SystemChrome.setEnabledSystemUIOverlays([]);
+  runApp(MyApp());
+}
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
