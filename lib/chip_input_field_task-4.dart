@@ -75,31 +75,31 @@ class ChipInputFiledState extends State<ChipInputField>{
                         right: 40,
                         bottom: 20,
                       ),
-                        onPressed:(){
-                          setState((){
-                            count=count-1;
-                            if(count==0){
-                              color2=Colors.black;
-                              color1 =Colors.blue;
-
-                            }
-                            else if(count==1){
-//                                colorr = Colors.black;
-//                              count=count-1;
-                              color3 = Colors.black;
-                              color2 =Colors.blue;
-
-
-                            }
-                            else if(count==2)
-                            {
-//                              count=count-1;
-                              color4 = Colors.black;
-                              color3 = Colors.blue;
-                            }
-
-                          });
-                        }
+//                        onPressed:(){
+//                          setState((){
+//                            count=count-1;
+//                            if(count==0){
+//                              color2=Colors.black;
+//                              color1 =Colors.blue;
+//
+//                            }
+//                            else if(count==1){
+////                                colorr = Colors.black;
+////                              count=count-1;
+//                              color3 = Colors.black;
+//                              color2 =Colors.blue;
+//
+//
+//                            }
+//                            else if(count==2)
+//                            {
+////                              count=count-1;
+//                              color4 = Colors.black;
+//                              color3 = Colors.blue;
+//                            }
+//
+//                          });
+//                        }
                                            ),
                     IconButton(icon: new Icon(Icons.mode_edit),iconSize: 25.0,
                       padding: const EdgeInsets.only(
