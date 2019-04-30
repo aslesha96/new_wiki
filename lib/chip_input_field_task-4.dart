@@ -85,31 +85,67 @@ var count=0;
                     ),),
                 )),
             Divider(color: Colors.red[900],),
-            new RaisedButton(
-                onPressed: (){
-                  if(count==0){
-                    print("//////////");
-//                    colorr == Colors.blue[900];
-                    colorr == Colors.pink[50];
+//            new Card(
 
-                    count=count+1;
-                  }
-                  else if(count==1){
-                    print("****");
-//                    colore == Colors.blue[900];
-                    colorr == Colors.blue[900] ? colorr = Colors.red : colorr = Colors.blue[900];
-                    count=count+1;
-                  }
-                  else if(count==2){
-                    print("-------------");
-                    colo == Colors.blue[900] ? colo = Colors.red : colo = Colors.blue[900];
-                    count=count+1;
-                  }
-                },
-                child: Text("Click Me!!!")
+              ListTile(
+                leading: Row(
+                  children: <Widget>[
+                    IconButton(icon: new Icon(Icons.arrow_upward),iconSize: 35.0,
+                      padding: const EdgeInsets.only(
+                        left: 150,
+                        top: 20,
+                        right: 40,
+                        bottom: 20,
+                      ),
+                    ),
+            ],),),
+            ListTile(),
+            ListTile(
+                leading: Row(
+                  children: <Widget>[
+                    IconButton(icon: new Icon(Icons.arrow_back),iconSize: 35.0,
+                      padding: const EdgeInsets.only(
+                        left: 20,
+                        top: 20,
+                        right: 40,
+                        bottom: 20,
+                      ),
+                    ),
+                    IconButton(icon: new Icon(Icons.mode_edit),iconSize: 35.0,
+                      padding: const EdgeInsets.only(
+                        left: 50,
+                        top: 40,
+                        right: 40,
+                        bottom: 40,
+                      ),
+                    ),
+                    IconButton(icon: new Icon(Icons.arrow_forward),iconSize: 35.0,
+                      padding: const EdgeInsets.only(
+                        left: 50,
+                        top: 20,
+                        right: 20,
+                        bottom: 20,
+                      ),
+                    ),
+                  ],)
+
             ),
-          ],
+            ListTile(),
+            ListTile(
+                leading: Row(
+                  children: <Widget>[
+                    IconButton(icon: new Icon(Icons.arrow_downward),iconSize: 35.0,
+                      padding: const EdgeInsets.only(
+                        left: 150,
+                        top: 20,
+                        right: 40,
+                        bottom: 20,
+                      ),
+                    ),
+                  ],)
 
+            ),
+                      ],
         ),
       ),
     );
